@@ -25,7 +25,7 @@ document.querySelectorAll("[data-buy='aerodrome']").forEach((link) => {
   link.href = aerodrome;
 });
 document.querySelectorAll("[data-ca]").forEach((node) => {
-  node.textContent = contract || "TBA";
+  node.textContent = contract || "0xb200000000000000000000fffa494c50a69a7701";
 });
 document.title = `Super Iguana ($${ticker}) — Born to bask. Forced to save the world.`;
 
