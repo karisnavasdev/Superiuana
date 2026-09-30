@@ -2,7 +2,8 @@ const cfg = window.SUPER_IGUANA || {};
 const ticker = cfg.ticker || "IGUANA";
 const contract = (cfg.contract || "").trim();
 const pair = (cfg.pair || "").trim() || contract;
-const xUrl = (cfg.x || "https://x.com/SuperIguana").replace("twitter.com", "x.com");
+const xUrl = (cfg.x || "https://x.com/SuperIguana_X").replace("twitter.com", "x.com");
+const telegramUrl = cfg.telegram || "https://t.me/Super_Iguana";
 
 const uniswap = contract
   ? `https://app.uniswap.org/swap?chain=base&outputCurrency=${contract}`
@@ -14,6 +15,9 @@ const aerodrome = contract
 document.querySelectorAll("[data-x]").forEach((link) => {
   link.href = xUrl;
 });
+document.querySelectorAll("[data-tg]").forEach((link) => {
+  link.href = telegramUrl;
+});
 document.querySelectorAll("[data-buy='uniswap']").forEach((link) => {
   link.href = uniswap;
 });
@@ -21,7 +25,7 @@ document.querySelectorAll("[data-buy='aerodrome']").forEach((link) => {
   link.href = aerodrome;
 });
 document.querySelectorAll("[data-ca]").forEach((node) => {
-  node.textContent = contract || "TBA";
+  node.textContent = contract || "0xb2000000000000000000009c9c717255fbd80601";
 });
 document.title = `Super Iguana ($${ticker}) — Born to bask. Forced to save the world.`;
 
